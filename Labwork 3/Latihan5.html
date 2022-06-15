@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <div class="head">
+            <title>Formulir</title>
+            <center><img src="UNS.png" width="250px" height="150px"></center>
+            <marquee scrollamount="20"><center><h1 id="judul">Daftar Digital Library</h1></center></marquee>
+        </div>
+    <head>
+    <style>
+        #judul{
+            font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif ;
+        }
+        .table,th,td{
+            border: 2px solid;
+        }
+        #formulir,#username,#password,#nama,#status,#email{
+            font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif ;
+        }
+
+
+    </style>
+    <body background="bg.png">
+        <div class="body">
+            <hr>
+            <center>
+                <table id="kepala" border="1" width="50%" cellpadding="20" background="pp4.png">
+                <tr style="background-color:yellowgreen;">
+                    <th colspan="2" id="formulir">Formulir Pendaftaran</th>
+                </tr>
+                <form action="https://digilib.uns.ac.id/" method="post" target="_blank">
+                    <tr>
+                            <th style="text-align: left;" id="username">Username</th>
+                            <th style="text-align: left;">
+                                <label for="username">:</label>
+                                <input id="user" type="text" name="username" required>
+                            </th>
+                    </tr>
+                    <tr>
+                        <th style="text-align: left;" id="password">Password</th>
+                        <th style="text-align: left;>
+                            <label for="password">:</label>
+                            <input id="pass" type="password" name="Password" required><br><br>
+                        </th>
+                    </tr>
+                    <tr>
+                        <th style="text-align: left;" id="nama">Nama Lengkap</th>
+                        <th style="text-align: left;>
+                            <label for="Nama Lengkap">:</label>
+                            <input id="riyan" type="text" name="Nama Lengkap" required><br><br>
+                        </th>
+                    </tr>
+                    <tr>
+                        <th style="text-align: left;" id="status">Status</th>
+                        <th style="text-align: left;">
+                            <label for="Status">:</label>
+                            
+                            <select name="status" id="status">
+                                <option value="pilih">Pilih Status Pekerjaan</option>
+                                <option value="Dosen UNS">Dosen UNS</option>
+                                <option  value="Mahasiswa UNS">Mahasiswa UNS</option>
+                                <option value="Karyawan UNS">Karyawan UNS</option>
+                                <option  value="Lain lain">Lain-lain</option>
+                                <option  value="Dosen Luar UNS">Dosen Luar UNS</option>
+                                <option  value="Mahasiswa Luar UNS">Mahasiswa Luar UNS</option>
+                                <option  value="Karyawan Luar UNS">Karyawan Luar UNS</option>
+                            </select>
+                        </th>
+                    </tr>
+                    <tr>
+                        <th style="text-align: left;" id="email">Email</th>
+                        <th style="text-align: left;>
+                            <label for="email">:</label>
+                            <input id="e" type="email" name="email" required><br><br>
+                        </th>
+                    </tr>
+                    <tr>
+                        <th colspan="2">
+                            <input id="submit" type="submit" value="submit">
+                        </th>
+                    </tr>
+                </form>
+            </center>
+        </div>
+        <p id="respon"></p>
+    </body>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script>
+        $(document).ready(function(){
+            //$("#submit").prop("disabled",true);
+            $("#submit").text("simpan");
+            //$("#submit").hide();
+            $("#riyan").val("riyan");
+            $("#user").val("riyan");
+            $("#pass").val("riyan");
+            $("#e").val("riyan@gmail.com");
+            $("table").css("background-color:red");
+            $("#submit").click(function(){
+                let a = '<b>' + $("#riyan").val() + '</b>';
+                $("#respon").html(a);
+            });
+            $(document).keypress(function(a){
+                if (e.which == 13){
+                    alert("enter")
+
+                }else if (e.which == 32){
+                    alert("tombol spasi")
+                }
+            }
+            <script type="text/javascript">
+            $("#status").change(function(){
+                var selectedcolor = $('#status').val();  
+                $("body").css({"background-color": selectedcolor});
+            });
+
+
+        });
+    </script>
+</html>

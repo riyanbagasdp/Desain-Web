@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Penghitung</title>
+        <!-- <script type="text/javascript" src="jquery.js"></script> -->
+        <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+        <!-- <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.js"></script> -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-maxlength/1.7.0/bootstrap-maxlength.min.js"></script>
+        <script src="https://code.jquery.com/ui/1.10.4/jquery-ui.js"></script>
+        <link rel="stylesheet" type="text/css" href="https://code.jquery.com/ui/1.10.4/themes/ui-lightness/jquery-ui.css">
+    </head>
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-5">
+            <center>
+                <h1>
+                    <b> Penghitung Karakter</b>
+                </h1>
+                <form>
+                    <div class="form-group">
+                        <textarea class="form-control" maxlength="50" name="ulasan" id="ulasan" cols="60" rows="4" onkeyup="countChar(this)"></textarea>
+                    </div>
+                    <br><br>
+                    <div class="form-group">
+                        <button class="btn btn-success">Refresh</button>
+                    </div>
+                </form>
+                <br>
+                <div id="bar"></div>
+            </center>
+                
+            </div>
+        </div>
+    </div>
+</body>
+    <script type="text/javascript">
+	    $('textarea').maxlength({
+		  alwaysShow: true,
+		  threshold: 10,
+		  warningClass: "label label-success",
+		  limitReachedClass: "label label-danger",
+		  preText: 'Jumlah huruf : ',
+		  validate: true,
+	    });
+        function countChar(val){
+			var len = val.value.length;
+			if (len >= 51) {
+				val.value = val.value.substring(0,50);
+			} else {
+				$('#hitung').text(0+len);
+				$('#bar').progressbar({
+					value: ((0+len)*2)
+				});
+			}
+		};
+    </script>
+    </body>
+</html>
+
